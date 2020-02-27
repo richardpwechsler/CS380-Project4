@@ -1,0 +1,128 @@
+
+@font-face {
+  font-family: 'Lazer 84';
+  src: url('media/Lazer84.ttf')  format('truetype');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#container {
+  position: fixed;
+  background-image: url('media/landscape2.jpeg');
+  background-size: cover;
+  background-position: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+}
+
+
+
+video {
+  min-width: 100%;
+  min-height: 80%;
+  width: auto;
+  height: auto;
+  mix-blend-mode: difference;
+  grid-row: 5 / 11;
+  grid-column: 1 / 11;
+  z-index: 4;
+}
+
+audio {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  mix-blend-mode: lighten;
+}
+
+.palatte {
+  position: absolute;
+  background: linear-gradient(to right, #22c1c3, #fdbb2d); 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: color;
+  z-index: 5;
+}
+
+
+
+.sun {
+  position: absolute;
+  bottom: 10px;
+  width: 300px;
+  height: 300px;
+  grid-row: 7 / 10;
+  grid-column: 8 / 10;
+  z-index: 2;
+  filter: opacity(90%);
+}
+
+.bars1, .bars2, .bars3, .bars4 {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  mix-blend-mode: screen;
+  filter: opacity(25%);
+  
+}
+
+.bars1 { top: 0; }
+
+.bars2 { top: 25%; }
+
+.bars3 { top: 50%; }
+
+.bars4 { top: 75%; }
+
+.triangles {
+  position: absolute;
+  transform: rotate(160deg);
+  top: calc(60% - 250px);
+  left: calc(50% - 250px);
+  width: 500px;
+  height: auto;
+  mix-blend-mode: screen;
+  animation: movetriangle 10s ease infinite;
+}
+
+@keyframes movetriangle {
+  0% { transform: rotate(160deg); }
+  50% { transform: rotate(165deg); }
+  100% { transform: rotate(160deg); }
+}
+
+h1 {
+  font-family: "Lazer 84", sans-serif;
+  letter-spacing: 0.13em;
+  font-size: 4em;
+  position: absolute;
+  z-index: 6;
+  mix-blend-mode: overlay;
+}
+
+.text1 {
+  top: calc(60% - 200px);
+  left: calc(50% - 200px);
+
+}
+
+.text2 {
+  transform: rotate(-7deg);
+  top: calc(60% - 120px);
+  left: calc(50% - 200px);
+}
+
